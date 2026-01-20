@@ -12,8 +12,15 @@ object ChatEvent: Listener {
     fun on(e: AsyncPlayerChatEvent){
         e.isCancelled = true
         val m = e.message
-        val jp = convJapanese(m)
         val p = e.player
+
+        if (m.startsWith("$")) {
+            val rawMessage = m.substring(1)
+            broadcast("&f${p.displayName} &b≫ &f$rawMessage")
+            return
+        }
+
+        val jp = convJapanese(m)
         broadcast(
             "&f${p.displayName} &b≫ &f" + if(m == jp) m else "$jp &7($m)"
         )
