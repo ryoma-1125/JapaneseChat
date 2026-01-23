@@ -23,7 +23,7 @@ if (hasPlugin) {
 }
 
 group 'me.syari.jp_chat'
-version '1.0.1'
+version '1.1.0'
 
 repositories {
     maven {
@@ -52,5 +52,6 @@ processResources {
 }
 
 jar {
+    archiveFileName = "JapaneseChat-LC-1.1.0.jar"
     from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
 }
