@@ -57,8 +57,6 @@ object ChatEvent: Listener {
 
         val colorPrefixPattern = Regex("""^([&§][0-9a-fk-orx])+""", RegexOption.IGNORE_CASE)
 
-        val numericProtectedPattern = Regex("""^(?=.*[0-9])[a-z0-9._-]+$""", RegexOption.IGNORE_CASE)
-
         return words.joinToString(" ") { word ->
             val colorMatch = colorPrefixPattern.find(word)
             val prefix = colorMatch?.value ?: ""
@@ -67,7 +65,6 @@ object ChatEvent: Listener {
             when {
                 urlPattern.matches(word) -> word
                 grassPattern.matches(word) -> word
-                numericProtectedPattern.matches(body) -> word
                 prefix.isNotEmpty() -> prefix + convJapanese(body)
                 else -> convJapanese(word)
             }
