@@ -1,8 +1,8 @@
 name: JapaneseChat-LC
-version: '1.1.0'
+version: '1.1.1'
 api-version: "1.13"
 main: me.syari.jp_chat.Main
 authors: [sya_ri, ryoma_1125]
 website: https://github.com/ryoma_1125/JapaneseChat-LC
-description: "Added '$' to skip conversion. Original by sya_ri."
+description: "Japanese language plugin for LunaChat. Original by sya_ri."
 softdepend: [LunaChat]
